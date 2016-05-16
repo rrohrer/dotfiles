@@ -17,6 +17,7 @@ endif
 call plug#begin('~/.vim/bundle')
 Plug 'vim-airline/vim-airline'  "Customize the tabs and statusline
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'fatih/vim-go'
 call plug#end()
 
 " VIM related settings
@@ -26,8 +27,8 @@ set expandtab       " Use spaces instead of tabs in insert mode
 set hlsearch        " Highlight search matches
 set ignorecase      " Ignore case when matching
 set laststatus=2    " Always show the status line
-set list            " Display certain whitespace chars designated by listchars
-set listchars=tab:>\ ,eol:\ ,trail:~,extends:>,precedes:<
+"set list            " Display certain whitespace chars designated by listchars
+"set listchars=tab:>\ ,eol:\ ,trail:~,extends:>,precedes:<
 set number          " Show line numbers
 set shiftwidth=4    " Number of spaces to use for each autoindent
 set smartcase       " Override ignorecase setting if search contains uppercase
@@ -40,6 +41,9 @@ syntax on           " Enable syntax highlighting
 colorscheme wwdc16
 set cursorline
 set colorcolumn=80
+
+" simple mapping to un-highlight find results
+nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " used to set up the status line the way I like it:
 let g:currentmode={
@@ -65,18 +69,24 @@ let g:currentmode={
     \}
 " set up the status-line
 set noshowmode                                           " Hide -- INSERT --
-set statusline=
-set statusline+=%0*\ %{toupper(g:currentmode[mode()])}   " Current mode
-set statusline+=%7*\[%n]                                  "buffernr
-set statusline+=%1*\ %<%F\                                "File+path
-set statusline+=%2*\ %y\                                  "FileType
-set statusline+=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
-set statusline+=%3*\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
-set statusline+=%4*\ %{&ff}\                              "FileFormat(dos/unix..) 
-set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
-set statusline+=%9*\ col:%03c\                            "Colnr
-set statusline+=%0*\ \ %m%r%w\ %P\ \                      "Modified? Readonly?`Top/bot.
+"set statusline=
+"set statusline+=%0*\ %{toupper(g:currentmode[mode()])}\   " Current mode
+"set statusline+=%7*\ [%n]\                                "buffernr
+"set statusline+=%1*\ %<%F\                                "File+path
+"set statusline+=%2*\ %y\                                  "FileType
+"set statusline+=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}\     "Encoding
+"set statusline+=%4*\ %{&ff}\                              "FileFormat(dos/unix..)
+"set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
+"set statusline+=%9*\ col:%03c\                            "Colnr
+"set statusline+=%0*\ \ %m%r%w\ %P\                        "Modified? Readonly?`Top/bot.
 
 " vim-airline settings
 let g:airline#extensions#tabline#enabled = 1     " Show tabline at the top
-let g:airline#extensions#tabline#fnamemod = ':t' " Show only filename in tabline
+"let g:airline#extensions#tabline#fnamemod = ':t' " Show only filename in tabline
+
+" vim-go settings
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
