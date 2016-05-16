@@ -16,6 +16,7 @@ endif
 
 call plug#begin('~/.vim/bundle')
 Plug 'vim-airline/vim-airline'  "Customize the tabs and statusline
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 " VIM related settings
