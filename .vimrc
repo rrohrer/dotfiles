@@ -1,3 +1,6 @@
+" hacks to get various features working.
+set t_Co=256
+set timeoutlen=50
 set nocompatible
 filetype plugin indent on
 
