@@ -43,6 +43,7 @@ syntax on           " Enable syntax highlighting
 colorscheme wwdc16
 set cursorline
 set colorcolumn=80
+set splitright     " When making new panes go OLD | NEW
 
 " simple mapping to un-highlight find results
 nnoremap <silent> <C-l> :nohl<CR><C-l>
