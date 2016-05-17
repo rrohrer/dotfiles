@@ -18,6 +18,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'vim-airline/vim-airline'  "Customize the tabs and statusline
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
+Plug 'valloric/youcompleteme'
 call plug#end()
 
 " VIM related settings
@@ -34,6 +35,7 @@ set shiftwidth=4    " Number of spaces to use for each autoindent
 set smartcase       " Override ignorecase setting if search contains uppercase
 set softtabstop=-1  " Use shiftwidth to insert spaces when <TAB> is pressed
 set tabstop=4       " Number of spaces that a tab in a file counts for
+set smartindent     " C style indening in many cases
 set wildmenu        " Enable visual menu for command line completion
 set fileencoding=utf-8             " Indicate desired and acceptable
 set fileencodings=ucs-bom,utf8,prc " file encodings
