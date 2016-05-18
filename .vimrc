@@ -1,6 +1,7 @@
 " hacks to get various features working.
-set t_Co=256
-set timeoutlen=50
+set t_Co=256         " tell us that 256 color mode is working
+set timeoutlen=1000  " set the mappint delap to 1000ms
+set timeoutlen=0    " set the keycode delay to 10ms
 set nocompatible
 filetype plugin indent on
 
@@ -44,9 +45,13 @@ colorscheme wwdc16
 set cursorline
 set colorcolumn=80
 set splitright     " When making new panes go OLD | NEW
+set incsearch      " Turn on incremental search
 
 " simple mapping to un-highlight find results
 nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+" map YCM's GoTo command to an easy chord
+nnoremap <F12> :YcmCompleter GoTo<CR><F12>
 
 " used to set up the status line the way I like it:
 let g:currentmode={
@@ -93,3 +98,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
+" ctrl-p ctags support
+let g:ctrlp_extensions = ['buffertag']
+let g:ctrlp_buftag_types = { 'go' : '--language-force=go --go-types=d' }
