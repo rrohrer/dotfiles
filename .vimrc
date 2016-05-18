@@ -19,7 +19,11 @@ call plug#begin('~/.vim/bundle')
 Plug 'vim-airline/vim-airline'  "Customize the tabs and statusline
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
-Plug 'valloric/youcompleteme'
+if has ("win32")
+    Plug 'shougo/neocomplete.vim'
+else
+    Plug 'valloric/youcompleteme'
+endif
 call plug#end()
 
 " VIM related settings
@@ -50,8 +54,12 @@ set incsearch      " Turn on incremental search
 " simple mapping to un-highlight find results
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
-" map YCM's GoTo command to an easy chord
-nnoremap <F12> :YcmCompleter GoTo<CR><F12>
+if has("win32")
+    let g:neocomplete#enable_at_startup = 1
+else
+    " map YCM's GoTo command to an easy chord
+    nnoremap <F12> :YcmCompleter GoTo<CR><F12>
+endif
 
 " used to set up the status line the way I like it:
 let g:currentmode={
