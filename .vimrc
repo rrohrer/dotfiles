@@ -1,9 +1,11 @@
 " hacks to get various features working.
 set t_Co=256         " tell us that 256 color mode is working
 set timeoutlen=1000  " set the mappint delap to 1000ms
-set timeoutlen=0    " set the keycode delay to 10ms
+set ttimeoutlen=0    " set the keycode delay to 10ms
 set nocompatible
 filetype plugin indent on
+"let mapleader=","
+"let maplocalleader=","
 
 " bootstrap to install vimplug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -21,10 +23,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
 if has ("win32")
     Plug 'shougo/neocomplete.vim'
+    Plug 'vim-scripts/perforce.vim'
 else
     Plug 'valloric/youcompleteme'
 endif
 Plug 'rking/ag.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
 " VIM related settings
@@ -45,6 +49,7 @@ set smartindent     " C style indening in many cases
 set wildmenu        " Enable visual menu for command line completion
 set fileencoding=utf-8             " Indicate desired and acceptable
 set fileencodings=ucs-bom,utf8,prc " file encodings
+set backspace=indent,eol,start     " allow backspace over certain characters.
 syntax on           " Enable syntax highlighting
 colorscheme wwdc16
 set cursorline
@@ -57,6 +62,8 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 if has("win32")
     let g:neocomplete#enable_at_startup = 1
+    " <TAB>: completion.
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 else
     " map YCM's GoTo command to an easy chord
     nnoremap <F12> :YcmCompleter GoTo<CR><F12>
@@ -115,3 +122,9 @@ let g:ctrlp_buftag_types = { 'go' : '--language-force=go --go-types=d' }
 " Ag settings
 let g:ag_working_path_mode="r"
 nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" vim-cpp-enhanced-highlight settings
+let g:cpp_class_scope_highlight=1
+let g:cpp_experimental_template_highlight=1
+" potentially disable false curly brace highlighting
+" let c_no_curly_error=1
