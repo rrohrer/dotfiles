@@ -24,6 +24,7 @@ if has ("win32")
 else
     Plug 'valloric/youcompleteme'
 endif
+Plug 'rking/ag.vim'
 call plug#end()
 
 " VIM related settings
@@ -110,3 +111,7 @@ let g:go_highlight_build_constraints = 1
 " ctrl-p ctags support
 let g:ctrlp_extensions = ['buffertag']
 let g:ctrlp_buftag_types = { 'go' : '--language-force=go --go-types=d' }
+
+" Ag settings
+let g:ag_working_path_mode="r"
+nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
