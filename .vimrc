@@ -3,6 +3,7 @@ set t_Co=256         " tell us that 256 color mode is working
 set timeoutlen=1000  " set the mappint delap to 1000ms
 set ttimeoutlen=0    " set the keycode delay to 10ms
 set nocompatible
+set hidden           " allow buffers to move to the background seamlessly
 filetype plugin indent on
 "let mapleader=","
 "let maplocalleader=","
@@ -66,6 +67,8 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 "else
     " map YCM's GoTo command to an easy chord
     nnoremap <F12> :YcmCompleter GoTo<CR><F12>
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 "endif
 
 " used to set up the status line the way I like it:
