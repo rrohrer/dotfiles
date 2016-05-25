@@ -3,6 +3,7 @@ set t_Co=256         " tell us that 256 color mode is working
 set timeoutlen=1000  " set the mappint delap to 1000ms
 set ttimeoutlen=0    " set the keycode delay to 10ms
 set nocompatible
+set hidden           " allow unedited buffers to go to the background
 filetype plugin indent on
 "let mapleader=","
 "let maplocalleader=","
@@ -38,8 +39,8 @@ set expandtab       " Use spaces instead of tabs in insert mode
 set hlsearch        " Highlight search matches
 set ignorecase      " Ignore case when matching
 set laststatus=2    " Always show the status line
-"set list            " Display certain whitespace chars designated by listchars
-"set listchars=tab:>\ ,eol:\ ,trail:~,extends:>,precedes:<
+set list            " Display certain whitespace chars designated by listchars
+set listchars=tab:>\ ,eol:\ ,trail:~,extends:>,precedes:<
 set number          " Show line numbers
 set shiftwidth=4    " Number of spaces to use for each autoindent
 set smartcase       " Override ignorecase setting if search contains uppercase
@@ -67,6 +68,7 @@ if has("win32")
 else
     " map YCM's GoTo command to an easy chord
     nnoremap <F12> :YcmCompleter GoTo<CR><F12>
+    "let g:ycm_global_ycm_extra_conf="~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 endif
 
 " used to set up the status line the way I like it:
