@@ -19,13 +19,15 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
+Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'  "Customize the tabs and statusline
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'for' : 'go' }
 if has ("win32")
     Plug 'vim-scripts/perforce.vim'
 endif
 Plug 'valloric/youcompleteme'
+"Plug 'oranget/vim-csharp', { 'for' : 'cs' }
 Plug 'rking/ag.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/vim-easy-align'
@@ -51,6 +53,7 @@ set fileencoding=utf-8             " Indicate desired and acceptable
 set fileencodings=ucs-bom,utf8,prc " file encodings
 set backspace=indent,eol,start     " allow backspace over certain characters.
 syntax on           " Enable syntax highlighting
+set background=dark
 colorscheme wwdc16
 set cursorline
 set colorcolumn=80
