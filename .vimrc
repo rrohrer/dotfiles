@@ -40,8 +40,8 @@ set expandtab       " Use spaces instead of tabs in insert mode
 set hlsearch        " Highlight search matches
 set ignorecase      " Ignore case when matching
 set laststatus=2    " Always show the status line
-"set list            " Display certain whitespace chars designated by listchars
-"set listchars=tab:>\ ,eol:\ ,trail:~,extends:>,precedes:<
+set list            " Display certain whitespace chars designated by listchars
+set listchars=tab:>\ ,eol:\ ,trail:~,extends:>,precedes:<
 set number          " Show line numbers
 set shiftwidth=4    " Number of spaces to use for each autoindent
 set smartcase       " Override ignorecase setting if search contains uppercase
