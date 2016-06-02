@@ -24,6 +24,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', { 'for' : 'go' }
 if has ("win32")
     Plug 'vim-scripts/perforce.vim'
+    Plug 'kkoenig/wimproved.vim'     " Add Windows fullscreen support
 endif
 Plug 'valloric/youcompleteme'
 Plug 'oranget/vim-csharp', { 'for' : 'cs' }
@@ -68,6 +69,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 nnoremap <F12> :YcmCompleter GoTo<CR><F12>
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_confirm_extra_conf = 0
 
 " vim-airline settings
 let g:airline#extensions#tabline#enabled = 1     " Show tabline at the top
@@ -93,3 +95,13 @@ let g:cpp_class_scope_highlight=1
 let g:cpp_experimental_template_highlight=1
 " potentially disable false curly brace highlighting
 " let c_no_curly_error=1
+
+"windows gvim settings
+if has('gui_running') && has('win32')
+    set guifont=consolas:h10
+
+    autocmd GUIEnter * silent! WToggleClean
+    autocmd GUIEnter * silent! WToggleFullscreen
+    nnoremap <silent> <Leader>r :WToggleFullscreen<ENTER>
+    nnoremap <silent> <Leader>f :WToggleClean<ENTER>
+endif
