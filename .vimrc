@@ -1,5 +1,5 @@
 " hacks to get various features working.
-set t_Co=256         " tell us that 256 color mode is working
+"set t_Co=256         " tell us that 256 color mode is working
 set timeoutlen=1000  " set the mappint delap to 1000ms
 set ttimeoutlen=0    " set the keycode delay to 10ms
 set nocompatible
@@ -21,6 +21,7 @@ endif
 call plug#begin('~/.vim/bundle')
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'  "Customize the tabs and statusline
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', { 'for' : 'go' }
 if has ("win32")
@@ -54,7 +55,8 @@ set fileencodings=ucs-bom,utf8,prc " file encodings
 set backspace=indent,eol,start     " allow backspace over certain characters.
 syntax on           " Enable syntax highlighting
 set background=dark
-colorscheme wwdc16
+let g:solarized_termtrans=1
+colorscheme solarized
 set cursorline
 set colorcolumn=80
 set splitright     " When making new panes go OLD | NEW
