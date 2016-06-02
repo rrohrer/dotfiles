@@ -1,12 +1,10 @@
 " hacks to get various features working.
-"set t_Co=256         " tell us that 256 color mode is working
+set t_Co=256         " tell us that 256 color mode is working
 set timeoutlen=1000  " set the mappint delap to 1000ms
 set ttimeoutlen=0    " set the keycode delay to 10ms
 set nocompatible
 set hidden           " allow buffers to move to the background seamlessly
 filetype plugin indent on
-"let mapleader=","
-"let maplocalleader=","
 
 " bootstrap to install vimplug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -28,7 +26,7 @@ if has ("win32")
     Plug 'vim-scripts/perforce.vim'
 endif
 Plug 'valloric/youcompleteme'
-"Plug 'oranget/vim-csharp', { 'for' : 'cs' }
+Plug 'oranget/vim-csharp', { 'for' : 'cs' }
 Plug 'rking/ag.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/vim-easy-align'
@@ -56,6 +54,7 @@ set backspace=indent,eol,start     " allow backspace over certain characters.
 syntax on           " Enable syntax highlighting
 set background=dark
 let g:solarized_termtrans=1
+let g:solarized_visibility = "low"
 colorscheme solarized
 set cursorline
 set colorcolumn=80
@@ -65,55 +64,14 @@ set incsearch      " Turn on incremental search
 " simple mapping to un-highlight find results
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
-"if has("win32")
-"    let g:neocomplete#enable_at_startup = 1
-    " <TAB>: completion.
-"    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-"else
-    " map YCM's GoTo command to an easy chord
-    nnoremap <F12> :YcmCompleter GoTo<CR><F12>
+" map YCM's GoTo command to an easy chord
+nnoremap <F12> :YcmCompleter GoTo<CR><F12>
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-"endif
-
-" used to set up the status line the way I like it:
-let g:currentmode={
-    \ 'n'  : 'Normal ',
-    \ 'no' : 'N·Operator Pending ',
-    \ 'v'  : 'Visual ',
-    \ 'V'  : 'V·Line ',
-    \ '^'  : 'V·Block ',
-    \ 's'  : 'Select ',
-    \ 'S'  : 'S·Line ',
-    \ '^S' : 'S·Block ',
-    \ 'i'  : 'Insert ',
-    \ 'R'  : 'Replace ',
-    \ 'Rv' : 'Visual·Replace ',
-    \ 'c'  : 'Command ',
-    \ 'cv' : 'Vim Ex ',
-    \ 'ce' : 'Ex ',
-    \ 'r'  : 'Prompt ',
-    \ 'rm' : 'More ',
-    \ 'r?' : 'Confirm ',
-    \ '!'  : 'Shell ',
-    \ 't'  : 'Terminal '
-    \}
-" set up the status-line
-set noshowmode                                           " Hide -- INSERT --
-"set statusline=
-"set statusline+=%0*\ %{toupper(g:currentmode[mode()])}\   " Current mode
-"set statusline+=%7*\ [%n]\                                "buffernr
-"set statusline+=%1*\ %<%F\                                "File+path
-"set statusline+=%2*\ %y\                                  "FileType
-"set statusline+=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}\     "Encoding
-"set statusline+=%4*\ %{&ff}\                              "FileFormat(dos/unix..)
-"set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
-"set statusline+=%9*\ col:%03c\                            "Colnr
-"set statusline+=%0*\ \ %m%r%w\ %P\                        "Modified? Readonly?`Top/bot.
 
 " vim-airline settings
 let g:airline#extensions#tabline#enabled = 1     " Show tabline at the top
-"let g:airline#extensions#tabline#fnamemod = ':t' " Show only filename in tabline
+set noshowmode                                           " Hide -- INSERT --
 
 " vim-go settings
 let g:go_highlight_functions = 1
