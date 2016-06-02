@@ -1,5 +1,5 @@
 " hacks to get various features working.
-set t_Co=256         " tell us that 256 color mode is working
+"set t_Co=256         " tell us that 256 color mode is working
 set timeoutlen=1000  " set the mappint delap to 1000ms
 set ttimeoutlen=0    " set the keycode delay to 10ms
 set nocompatible
@@ -51,13 +51,13 @@ set wildmenu        " Enable visual menu for command line completion
 set fileencoding=utf-8             " Indicate desired and acceptable
 set fileencodings=ucs-bom,utf8,prc " file encodings
 set backspace=indent,eol,start     " allow backspace over certain characters.
+set cursorline
+set colorcolumn=80
 syntax on           " Enable syntax highlighting
 set background=dark
 let g:solarized_termtrans=1
 let g:solarized_visibility = "low"
 colorscheme solarized
-set cursorline
-set colorcolumn=80
 set splitright     " When making new panes go OLD | NEW
 set incsearch      " Turn on incremental search
 
