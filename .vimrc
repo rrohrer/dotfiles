@@ -102,6 +102,6 @@ if has('gui_running') && has('win32')
 
     autocmd GUIEnter * silent! WToggleClean
     autocmd GUIEnter * silent! WToggleFullscreen
-    nnoremap <silent> <Leader>r :WToggleFullscreen<ENTER>
+    nnoremap <silent> <Leader>w :WToggleFullscreen<ENTER>
     nnoremap <silent> <Leader>f :WToggleClean<ENTER>
 endif
