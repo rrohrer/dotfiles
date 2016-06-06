@@ -67,6 +67,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " map YCM's GoTo command to an easy chord
 nnoremap <F12> :YcmCompleter GoTo<CR><F12>
+nnoremap <F2> :YcmCompleter GetType<CR><F2>
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
