@@ -27,6 +27,7 @@ if has ("win32")
     Plug 'kkoenig/wimproved.vim'     " Add Windows fullscreen support
 endif
 Plug 'valloric/youcompleteme'
+Plug 'jelera/vim-javascript-syntax', {'for' : ['js', 'javascript'] }
 Plug 'oranget/vim-csharp', { 'for' : 'cs' }
 Plug 'rking/ag.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
