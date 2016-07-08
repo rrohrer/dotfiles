@@ -28,6 +28,7 @@ if has ("win32")
 endif
 Plug 'valloric/youcompleteme'
 Plug 'jelera/vim-javascript-syntax', {'for' : ['js', 'javascript'] }
+Plug 'leafgarland/typescript-vim', {'for' : ['ts', 'typescript'] }
 Plug 'oranget/vim-csharp', { 'for' : 'cs' }
 Plug 'rking/ag.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
