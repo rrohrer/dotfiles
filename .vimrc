@@ -43,7 +43,7 @@ set hlsearch        " Highlight search matches
 set ignorecase      " Ignore case when matching
 set laststatus=2    " Always show the status line
 set list            " Display certain whitespace chars designated by listchars
-set listchars=tab:>\ ,eol:\ ,trail:~,extends:>,precedes:<
+set listchars=tab:\ \ ,eol:\ ,trail:~,extends:>,precedes:<
 set number          " Show line numbers
 set shiftwidth=4    " Number of spaces to use for each autoindent
 set smartcase       " Override ignorecase setting if search contains uppercase
@@ -85,6 +85,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
 
 " ctrl-p ctags support
 let g:ctrlp_extensions = ['buffertag']
