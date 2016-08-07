@@ -1,3 +1,4 @@
+export PATH="/usr/local/bin:$PATH"
 export GOPATH=~/Programming/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
