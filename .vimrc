@@ -27,6 +27,8 @@ if has ("win32")
     Plug 'kkoenig/wimproved.vim'     " Add Windows fullscreen support
 endif
 Plug 'valloric/youcompleteme'
+Plug 'jelera/vim-javascript-syntax', {'for' : ['js', 'javascript'] }
+Plug 'leafgarland/typescript-vim', {'for' : ['ts', 'typescript'] }
 Plug 'oranget/vim-csharp', { 'for' : 'cs' }
 Plug 'rking/ag.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -68,6 +70,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 " map YCM's GoTo command to an easy chord
 nnoremap <F12> :YcmCompleter GoTo<CR><F12>
 nnoremap <F2> :YcmCompleter GetType<CR><F2>
+nnoremap <F3> :YcmCompleter FixIt<CR><F3>
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
