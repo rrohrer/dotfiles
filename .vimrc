@@ -31,6 +31,7 @@ Plug 'valloric/youcompleteme'
 Plug 'jelera/vim-javascript-syntax', {'for' : ['js', 'javascript'] }
 Plug 'leafgarland/typescript-vim', {'for' : ['ts', 'typescript'] }
 Plug 'oranget/vim-csharp', { 'for' : 'cs' }
+Plug 'quabug/vim-gdscript', { 'for' : ['gd', 'gdscript'] }
 Plug 'rking/ag.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/vim-easy-align'
