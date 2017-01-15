@@ -1,8 +1,8 @@
 " hacks to get various features working.
-"set t_Co=256         " tell us that 256 color mode is working
+set t_Co=256         " tell us that 256 color mode is working
 set timeoutlen=1000  " set the mappint delap to 1000ms
 set ttimeoutlen=0    " set the keycode delay to 10ms
-set nocompatible
+"set nocompatible
 set hidden           " allow buffers to move to the background seamlessly
 filetype plugin indent on
 
@@ -18,6 +18,7 @@ endif
 
 call plug#begin('~/.vim/bundle')
 Plug 'altercation/vim-colors-solarized'
+Plug 'zacanger/angr.vim'
 Plug 'vim-airline/vim-airline'  "Customize the tabs and statusline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -58,9 +59,10 @@ set cursorline
 set colorcolumn=80
 syntax on           " Enable syntax highlighting
 set background=dark
-let g:solarized_termtrans=1
-let g:solarized_visibility = "low"
-colorscheme solarized
+"let g:solarized_termtrans=1
+"let g:solarized_visibility = "low"
+"let g:solarized_termcolors=256
+colorscheme angr
 set splitright     " When making new panes go OLD | NEW
 set incsearch      " Turn on incremental search
 
