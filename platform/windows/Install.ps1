@@ -42,8 +42,8 @@ else {
 Write-Verbose 'Upgrading existing packages...'
 (choco upgrade -r -y all) | Out-Null
 
-Write-Verbose "Installing packages from $clone\Platform\Windows\packages.config"
-(choco install -r -y "$clone\Platform\Windows\packages.config") | Out-Null
+Write-Verbose "Installing packages from $clone\platform\windows\packages.config"
+(choco install -r -y "$clone\platform\windows\packages.config") | Out-Null
 
 choco list -lo
 
