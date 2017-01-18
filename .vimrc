@@ -107,7 +107,7 @@ let g:cpp_experimental_template_highlight=1
 
 "windows gvim settings
 if has('gui_running') && has('win32')
-    set guifont=consolas:h10
+    set guifont=consolas:h8
 
     autocmd GUIEnter * silent! WToggleClean
     autocmd GUIEnter * silent! WToggleFullscreen
