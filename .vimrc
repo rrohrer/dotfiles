@@ -18,7 +18,8 @@ endif
 
 call plug#begin('~/.vim/bundle')
 Plug 'altercation/vim-colors-solarized'
-Plug 'zacanger/angr.vim'
+Plug 'zacanger/angr.vim' "Angr color scheme
+Plug 'juanpabloaj/vim-pixelmuerto' "pixelmuerto color scheme
 Plug 'vim-airline/vim-airline'  "Customize the tabs and statusline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -57,13 +58,13 @@ set fileencoding=utf-8             " Indicate desired and acceptable
 set fileencodings=ucs-bom,utf8,prc " file encodings
 set backspace=indent,eol,start     " allow backspace over certain characters.
 set cursorline
-set colorcolumn=80
+set colorcolumn=120
 syntax on           " Enable syntax highlighting
 set background=dark
 "let g:solarized_termtrans=1
 "let g:solarized_visibility = "low"
 "let g:solarized_termcolors=256
-colorscheme angr
+colorscheme pixelmuerto
 set splitright     " When making new panes go OLD | NEW
 set incsearch      " Turn on incremental search
 
