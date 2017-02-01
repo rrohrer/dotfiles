@@ -116,5 +116,5 @@ if has('gui_running') && has('win32')
     nnoremap <silent> <Leader>f :WToggleClean<ENTER>
 endif
 if has('gui_running') && !has('win32')
-    set guifont=hack:h8
+    set guifont=hack:h9
 endif
