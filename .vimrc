@@ -18,7 +18,7 @@ endif
 
 call plug#begin('~/.vim/bundle')
 Plug 'altercation/vim-colors-solarized'
-Plug 'zacanger/angr.vim' "Angr color scheme
+Plug 'rrohrer/angr.vim' "Angr color scheme
 Plug 'juanpabloaj/vim-pixelmuerto' "pixelmuerto color scheme
 Plug 'vim-airline/vim-airline'  "Customize the tabs and statusline
 Plug 'vim-airline/vim-airline-themes'
