@@ -25,7 +25,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', { 'for' : 'go' }
 if has ("win32")
-    Plug 'vim-scripts/perforce.vim'
+    "Plug 'vim-scripts/perforce.vim'
     Plug 'kkoenig/wimproved.vim'     " Add Windows fullscreen support
 endif
 Plug 'valloric/youcompleteme'
@@ -114,4 +114,7 @@ if has('gui_running') && has('win32')
     autocmd GUIEnter * silent! WToggleFullscreen
     nnoremap <silent> <Leader>w :WToggleFullscreen<ENTER>
     nnoremap <silent> <Leader>f :WToggleClean<ENTER>
+endif
+if has('gui_running') && !has('win32')
+    set guifont=hack:h8
 endif
