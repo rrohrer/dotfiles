@@ -20,6 +20,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'altercation/vim-colors-solarized'
 Plug 'rrohrer/angr.vim' "Angr color scheme
 Plug 'juanpabloaj/vim-pixelmuerto' "pixelmuerto color scheme
+Plug 'zcodes/vim-colors-basic' "basic-dark color theme
 Plug 'vim-airline/vim-airline'  "Customize the tabs and statusline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -64,7 +65,7 @@ syntax on           " Enable syntax highlighting
 "let g:solarized_termtrans=1
 "let g:solarized_visibility = "low"
 "let g:solarized_termcolors=256
-colorscheme angr
+colorscheme basic-dark
 set splitright     " When making new panes go OLD | NEW
 set incsearch      " Turn on incremental search
 
@@ -82,6 +83,7 @@ let g:ycm_confirm_extra_conf = 0
 " vim-airline settings
 let g:airline#extensions#tabline#enabled = 1     " Show tabline at the top
 set noshowmode                                           " Hide -- INSERT --
+let g:airline_theme='wombat'
 
 " vim-go settings
 let g:go_highlight_functions = 1
