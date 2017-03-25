@@ -110,7 +110,9 @@ let g:cpp_experimental_template_highlight=1
 
 "windows gvim settings
 if has('gui_running') && has('win32')
-    set guifont=consolas:h8
+    set guifont=hack:h8
+    let g:ycm_enable_diagnostic_signs = 0
+    let g:ycm_enable_diagnostic_highlighting = 0
 
     autocmd GUIEnter * silent! WToggleClean
     autocmd GUIEnter * silent! WToggleFullscreen
