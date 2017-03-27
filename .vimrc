@@ -20,7 +20,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'altercation/vim-colors-solarized'
 Plug 'rrohrer/angr.vim' "Angr color scheme
 Plug 'juanpabloaj/vim-pixelmuerto' "pixelmuerto color scheme
-Plug 'zcodes/vim-colors-basic' "basic-dark color theme
+Plug 'rrohrer/vim-colors-basic' "basic-dark color theme
 Plug 'vim-airline/vim-airline'  "Customize the tabs and statusline
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
