@@ -111,6 +111,7 @@ if has('gui_running') && has('win32')
     set guifont=hack:h8
     let g:ycm_enable_diagnostic_signs = 0
     let g:ycm_enable_diagnostic_highlighting = 0
+    let g:ycm_global_ycm_extra_conf ='c:\Users\ryrohr\.ycm_extra_conf.py'
 
     autocmd GUIEnter * silent! WToggleClean
     autocmd GUIEnter * silent! WToggleFullscreen
