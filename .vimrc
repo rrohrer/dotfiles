@@ -1,5 +1,5 @@
 " hacks to get various features working.
-set t_Co=256         " tell us that 256 color mode is working
+"set t_Co=256         " tell us that 256 color mode is working
 set timeoutlen=1000  " set the mappint delap to 1000ms
 set ttimeoutlen=0    " set the keycode delay to 10ms
 "set nocompatible
@@ -61,7 +61,6 @@ set backspace=indent,eol,start     " allow backspace over certain characters.
 set cursorline
 set colorcolumn=120
 syntax on           " Enable syntax highlighting
-"set background=dark
 "let g:solarized_termtrans=1
 "let g:solarized_visibility = "low"
 "let g:solarized_termcolors=256
@@ -122,4 +121,11 @@ if has('gui_running') && has('win32')
 endif
 if has('gui_running') && !has('win32')
     set guifont=hack:h10
+endif
+if has('gui_gtk2')
+    set guifont=hack\ 8
+    set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll bar
 endif
