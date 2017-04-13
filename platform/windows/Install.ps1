@@ -77,3 +77,4 @@ gvim +PlugInstall +qall
 #[Environment]::SetEnvironmentVariable("DOTFILES", "$env:HOMEPATH\.dotfiles", "User")
 
 #cmd /c reg add 'HKCU\Software\Microsoft\Command Processor' /v AutoRun ^ /t REG_EXPAND_SZ /d $clone\Platform\Windows\setup-env.cmd /f
+[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\tools\mingw64\bin", [EnvironmentVariableTarget]::Machine)
